@@ -209,7 +209,7 @@
 
 @media (min-width: 1024px) {
     .tip-calc {
-        max-width: 1100px;
+        max-width: 1000px;
         border-radius: 16px;
         padding: 2rem;
     }
@@ -229,7 +229,7 @@
     }
 
     .tip-calc__fieldset__grid {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 0.9fr 0.9fr 1fr;
         grid-template-rows: 1fr 1fr;
     }
 

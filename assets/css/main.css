@@ -42,7 +42,6 @@ main {
 @media (min-width: 1024px) {
     main {
         align-items: center;
-        /* justify-content: center; */
     }
 
     .logo {
