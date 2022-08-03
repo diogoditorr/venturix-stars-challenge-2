@@ -9,13 +9,14 @@ const totalAmount = document.querySelector("#totalAmount");
 
 function calculate() {
     console.log(Object.fromEntries(new FormData(form).entries()));
-    const { bill, numberOfPeople, tipPorcent, tipPorcentCustom } =
+    let { bill, numberOfPeople, tipPorcent, tipPorcentCustom } =
         Object.fromEntries(new FormData(form).entries());
 
     if (!bill || !numberOfPeople || (!tipPorcent && !tipPorcentCustom)) {
         return;
     }
 
+    bill = formatCurrencyToNumber(bill);
     const tip = tipPorcent || tipPorcentCustom;
     const total = bill * (1 + tip / 100);
     const tipAmountPerPerson = ((bill * (tip / 100)) / numberOfPeople).toFixed(
@@ -56,9 +57,7 @@ function formatNumberToCurrency(value) {
 }
 
 billInput.addEventListener("change", ({ target }) => {
-    if (!Number.isNaN(Number(target.value))) {
-        onInputChange();
-    }
+    if (!Number.isNaN(Number(target.value))) onInputChange();
 });
 billInput.addEventListener("focus", ({ target }) => {
     const value = target.value;
@@ -68,7 +67,9 @@ billInput.addEventListener("blur", ({ target }) => {
     const value = Number(target.value) || 0;
     target.value = formatNumberToCurrency(value);
 });
-numberOfPeopleInput.addEventListener("change", onInputChange);
+numberOfPeopleInput.addEventListener("change", ({ target }) => {
+    if (Number(target.value) !== 0) onInputChange();
+});
 
 resetButton.addEventListener("click", () => {
     resetButton.disabled = true;
