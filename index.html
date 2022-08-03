@@ -1,44 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <head>
+        <!-- Total: 5 horas -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+            rel="stylesheet"
+        />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+        <title>Frontend Mentor | Tip calculator app</title>
 
-  Bill
+        <!-- Styles -->
+        <link rel="stylesheet" href="./assets/css/main.css" />
+        <style>
+            .attribution {
+                font-size: 11px;
+                text-align: center;
+            }
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+            .attribution a {
+                color: hsl(228, 45%, 44%);
+            }
+        </style>
 
-  Number of People
+        <script src="./assets/js/main.js" defer></script>
+    </head>
 
-  Tip Amount
-  / person
+    <body>
+        <header>
+            <img
+                src="./images/logo.svg"
+                alt="Logo which is written 'SPLITTER'"
+            />
+        </header>
 
-  Total
-  / person
+        <main>
+            <div class="tip-calc">
+                <form>
+                    <div class="tip-calc__inputs">
+                        <div class="tip-calc__field">
+                            <label for="bill" class="tip-calc__field__label">
+                                Bill
+                            </label>
+                            <div class="tip-calc__field__input-wrapper">
+                                <img
+                                    src="./images/icon-dollar.svg"
+                                    alt="Dollar icon"
+                                />
+                                <input
+                                    id="bill"
+                                    name="bill"
+                                    type="string"
+                                    min="0"
+                                    step="any"
+                                    placeholder="0"
+                                    required
+                                    class="tip-calc__field__input"
+                                />
+                            </div>
+                        </div>
 
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+                        <fieldset class="tip-calc__fieldset">
+                            <legend>Select Tip %</legend>
+
+                            <div class="tip-calc__fieldset__grid">
+                                <input
+                                    type="radio"
+                                    name="tipPorcent"
+                                    id="tipPorcent5"
+                                    value="5"
+                                />
+                                <label for="tipPorcent5">5%</label>
+
+                                <input
+                                    type="radio"
+                                    name="tipPorcent"
+                                    id="tipPorcent10"
+                                    value="10"
+                                />
+                                <label for="tipPorcent10">10%</label>
+
+                                <input
+                                    type="radio"
+                                    name="tipPorcent"
+                                    id="tipPorcent15"
+                                    value="15"
+                                />
+                                <label for="tipPorcent15">15%</label>
+
+                                <input
+                                    type="radio"
+                                    name="tipPorcent"
+                                    id="tipPorcent25"
+                                    value="25"
+                                />
+                                <label for="tipPorcent25">25%</label>
+
+                                <input
+                                    type="radio"
+                                    name="tipPorcent"
+                                    id="tipPorcent50"
+                                    value="50"
+                                />
+                                <label for="tipPorcent50">50%</label>
+
+                                <input
+                                    type="number"
+                                    name="tipPorcentCustom"
+                                    id="tipPorcentCustom"
+                                    placeholder="Custom"
+                                    class="tip-calc__fieldset__input--custom"
+                                />
+                            </div>
+                        </fieldset>
+
+                        <div class="tip-calc__field">
+                            <label
+                                for="numberOfPeople"
+                                class="tip-calc__field__label"
+                            >
+                                Number of People
+                            </label>
+                            <div class="tip-calc__field__input-wrapper">
+                                <img
+                                    src="./images/icon-person.svg"
+                                    alt="Person icon"
+                                />
+                                <input
+                                    id="numberOfPeople"
+                                    name="numberOfPeople"
+                                    type="number"
+                                    min="0"
+                                    step="1"
+                                    placeholder="0"
+                                    required
+                                    class="tip-calc__field__input"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-calc__panel">
+                        <div class="tip-calc__result">
+                            <div class="tip-calc__result__formula">
+                                <h2>Tip Amount</h2>
+                                <p>/ person</p>
+                            </div>
+
+                            <p id="tipAmount" class="tip-calc__result__value">$0.00</p>
+                        </div>
+
+                        <div class="tip-calc__result">
+                            <div class="tip-calc__result__formula">
+                                <h2>Total</h2>
+                                <p>/ person</p>
+                            </div>
+
+                            <p id="totalAmount" class="tip-calc__result__value">$0.00</p>
+                        </div>
+
+                        <button
+                            type="reset"
+                            disabled
+                            class="tip-calc__panel__reset-button"
+                        >
+                            Reset
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <footer class="attribution">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded by <a href="#">Your Name Here</a>.
+        </footer>
+    </body>
 </html>

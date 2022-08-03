@@ -1,0 +1,188 @@
+.tip-calc {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1.5rem;
+    border-radius: 16px 16px 0 0;
+
+    background-color: var(--white);
+}
+
+.tip-calc__inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.tip-calc__field {
+}
+
+.tip-calc__field__label,
+.tip-calc__fieldset > legend {
+    color: var(--dark-grayish-cyan);
+}
+
+.tip-calc__field__input-wrapper {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    margin-top: 0.25rem;
+
+    border-radius: 8px;
+}
+
+.tip-calc__field__input-wrapper > img {
+    position: absolute;
+
+    left: 1rem;
+    top: calc(50% - 8.5 px);
+}
+
+.tip-calc__field__input,
+.tip-calc__fieldset__input--custom {
+    width: 100%;
+
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: end;
+
+    background-color: var(--very-light-grayish-cyan);
+    color: var(--very-dark-cyan);
+}
+
+.tip-calc__field__input:is(:focus, :hover),
+.tip-calc__fieldset__input--custom:is(:focus, :hover) {
+    outline: 2px solid var(--primary);
+}
+
+.tip-calc__field__input::placeholder,
+.tip-calc__fieldset__input--custom::placeholder {
+    color: var(--dark-grayish-cyan);
+}
+
+.tip-calc__fieldset {
+    border: none;
+    margin: 2rem 0;
+}
+
+.tip-calc__fieldset > legend {
+    margin-bottom: 1rem;
+}
+
+.tip-calc__fieldset__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1rem;
+}
+
+.tip-calc__fieldset__grid input[type="radio"] {
+    position: fixed;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.tip-calc__fieldset__grid label {
+    padding: 0.5rem;
+    
+    border-radius: 4px;
+    
+    font-size: 1.5rem;
+    text-align: center;
+
+    background-color: var(--very-dark-cyan);
+    color: var(--white);
+
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.tip-calc__fieldset__grid label:hover {
+    background-color: var(--light-primary);
+    color: var(--very-dark-cyan);
+}
+
+.tip-calc__fieldset__grid input[type="radio"]:checked + label {
+    background-color: var(--primary);
+    color: var(--very-dark-cyan);
+}
+
+.tip-calc__fieldset__grid input[type="radio"]:focus-visible + label {
+    outline: 2px solid black;
+}
+
+.tip-calc__panel {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 2rem;
+    padding: 1.5rem;
+
+    border-radius: 16px;
+
+    background-color: var(--very-dark-cyan);
+}
+
+.tip-calc__result {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tip-calc__result__formula {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.tip-calc__result__formula h2 {
+    font-size: 1rem;
+    color: var(--white);
+}
+
+.tip-calc__result__formula p {
+    font-size: 0.875rem;
+    color: var(--grayish-cyan)
+}
+
+.tip-calc__result__value {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.tip-calc__panel__reset-button {
+    width: 100%;
+    padding: 0.5rem 0;
+    
+    border: none;
+    border-radius: 4px;
+    
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    
+    background-color: var(--primary);
+    color: var(--very-dark-cyan);
+
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.tip-calc__panel__reset-button:hover {
+    background-color: var(--light-primary);
+}
+
+.tip-calc__panel__reset-button:disabled {
+    background-color: var(--reset-button-disabled);
+    cursor: not-allowed;
+}
