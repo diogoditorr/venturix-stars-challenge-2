@@ -9,7 +9,7 @@ const totalAmount = document.querySelector("#totalAmount");
 const labelError = document.querySelector(".tip-calc__field__label__error");
 
 function calculate() {
-    console.log(Object.fromEntries(new FormData(form).entries()));
+    // console.log(Object.fromEntries(new FormData(form).entries()));
 
     const formData = new FormData(form);
     const bill = formatCurrencyToNumber(formData.get("bill"));
