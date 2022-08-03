@@ -38,14 +38,13 @@
     </head>
 
     <body>
-        <header>
-            <img
-                src="./images/logo.svg"
-                alt="Logo which is written 'SPLITTER'"
-            />
-        </header>
-
         <main>
+            <div class="logo">
+                <img
+                    src="./images/logo.svg"
+                    alt="Logo which is written 'SPLITTER'"
+                />
+            </div>
             <div class="tip-calc">
                 <form>
                     <div class="tip-calc__inputs">
@@ -61,10 +60,9 @@
                                 <input
                                     id="bill"
                                     name="bill"
-                                    type="string"
-                                    min="0"
-                                    step="any"
+                                    type="text"
                                     placeholder="0"
+                                    autocomplete="off"
                                     required
                                     class="tip-calc__field__input"
                                 />
@@ -130,7 +128,10 @@
                                 for="numberOfPeople"
                                 class="tip-calc__field__label"
                             >
-                                Number of People
+                                <p>Number of People</p>
+                                <span
+                                    class="tip-calc__field__label__error"
+                                ></span>
                             </label>
                             <div class="tip-calc__field__input-wrapper">
                                 <img
@@ -141,7 +142,7 @@
                                     id="numberOfPeople"
                                     name="numberOfPeople"
                                     type="number"
-                                    min="0"
+                                    min="1"
                                     step="1"
                                     placeholder="0"
                                     required
@@ -152,22 +153,34 @@
                     </div>
 
                     <div class="tip-calc__panel">
-                        <div class="tip-calc__result">
-                            <div class="tip-calc__result__formula">
-                                <h2>Tip Amount</h2>
-                                <p>/ person</p>
+                        <div>
+                            <div class="tip-calc__result">
+                                <div class="tip-calc__result__formula">
+                                    <h2>Tip Amount</h2>
+                                    <p>/ person</p>
+                                </div>
+
+                                <p
+                                    id="tipAmount"
+                                    class="tip-calc__result__value"
+                                >
+                                    $0.00
+                                </p>
                             </div>
 
-                            <p id="tipAmount" class="tip-calc__result__value">$0.00</p>
-                        </div>
+                            <div class="tip-calc__result">
+                                <div class="tip-calc__result__formula">
+                                    <h2>Total</h2>
+                                    <p>/ person</p>
+                                </div>
 
-                        <div class="tip-calc__result">
-                            <div class="tip-calc__result__formula">
-                                <h2>Total</h2>
-                                <p>/ person</p>
+                                <p
+                                    id="totalAmount"
+                                    class="tip-calc__result__value"
+                                >
+                                    $0.00
+                                </p>
                             </div>
-
-                            <p id="totalAmount" class="tip-calc__result__value">$0.00</p>
                         </div>
 
                         <button

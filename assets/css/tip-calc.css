@@ -12,17 +12,31 @@
     background-color: var(--white);
 }
 
+.tip-calc form {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
 .tip-calc__inputs {
     display: flex;
     flex-direction: column;
 }
 
-.tip-calc__field {
+
+.tip-calc__field__label {
+    display: flex;
+    justify-content: space-between;
 }
 
 .tip-calc__field__label,
 .tip-calc__fieldset > legend {
     color: var(--dark-grayish-cyan);
+}
+
+.tip-calc__field__label__error {
+    color: var(--error);
 }
 
 .tip-calc__field__input-wrapper {
@@ -64,6 +78,11 @@
 .tip-calc__fieldset__input--custom:is(:focus, :hover) {
     outline: 2px solid var(--primary);
 }
+
+.tip-calc__field__input.error {
+    outline: 2px solid var(--error);
+}
+
 
 .tip-calc__field__input::placeholder,
 .tip-calc__fieldset__input--custom::placeholder {
@@ -137,13 +156,14 @@
 .tip-calc__result {
     width: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    margin-bottom: 2rem;
 }
 
 .tip-calc__result__formula {
     display: flex;
     flex-direction: column;
-    margin-bottom: 2rem;
 }
 
 .tip-calc__result__formula h2 {
@@ -185,4 +205,46 @@
 .tip-calc__panel__reset-button:disabled {
     background-color: var(--reset-button-disabled);
     cursor: not-allowed;
+}
+
+@media (min-width: 1024px) {
+    .tip-calc {
+        max-width: 1100px;
+        border-radius: 16px;
+        padding: 2rem;
+    }
+
+    .tip-calc form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+    }
+
+    .tip-calc__inputs {
+        padding: 1rem;
+    }
+
+    .tip-calc__fieldset {
+        margin: 3rem 0;
+    }
+
+    .tip-calc__fieldset__grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .tip-calc__panel {
+        justify-content: space-between;
+        margin: 0;
+        padding: 2rem;
+        padding-top: 2.5rem;
+    }
+
+    .tip-calc__result {
+        /* margin-bottom: 3rem; */
+    }
+
+    .tip-calc__result__value {
+        font-size: 3rem;
+    }
 }
