@@ -6,11 +6,11 @@
     align-items: center;
     justify-content: center;
 
-    margin-bottom: 4rem;
     padding: 1.5rem;
 
     border-radius: 16px 16px 0 0;
-
+    
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     background-color: var(--white);
 }
 
@@ -213,7 +213,6 @@
     .tip-calc {
         max-width: 1000px;
         border-radius: 16px;
-        margin-bottom: 10rem;
         padding: 2rem;
     }
 

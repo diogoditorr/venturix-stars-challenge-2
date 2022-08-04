@@ -28,12 +28,12 @@ body {
 }
 
 main {
-    min-height: 100vh;
+    margin-bottom: 10rem;
     display: flex;
     flex-direction: column;
 }
 
-.logo {
+header {
     display: flex;
     justify-content: center;
     padding: 2rem 0;
@@ -44,7 +44,7 @@ main {
         align-items: center;
     }
 
-    .logo {
+    header {
         padding: 6rem 0;
     }
 }
